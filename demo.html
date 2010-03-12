@@ -1,0 +1,101 @@
+<!doctype html>
+<!--
+  ~ jquery.mb.components
+  ~ Copyright (c) 2001-2010. Matteo Bicocchi (Pupunzi); Open lab srl, Firenze - Italy
+  ~ email: info@pupunzi.com
+  ~ site: http://pupunzi.com
+  ~
+  ~ Licences: MIT, GPL
+  ~ http://www.opensource.org/licenses/mit-license.php
+  ~ http://www.gnu.org/licenses/gpl.html
+  -->
+
+<html>
+<head>
+  <style type="text/css">
+    body{
+      font:14px/14px Arial, sans-serif;
+    }
+    .wrapper{
+      font-family:Arial, Helvetica, sans-serif;
+      padding-top:90px;
+      padding-left:50px;
+    }
+    .wrapper h1{
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:26px;
+    }
+
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>mb.mediaEmbedder</title>
+  <link href="css/mb.retweet.css" media="all" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script type="text/javascript" src="inc/jquery.mb.mediaEmbedder.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      if (self.location.href == top.location.href){
+        $("body").css({font:"normal 13px/16px 'trebuchet MS', verdana, sans-serif"});
+        var logo=$("<a href='http://pupunzi.com'><img id='logo' border='0' src='http://pupunzi.com/images/logo.png' alt='mb.ideas.repository' style='display:none;'></a>").css({position:"absolute"});
+        $("body").prepend(logo);
+        $("#logo").fadeIn();
+      }
+
+      $(function(){
+        $.mb_videoEmbedder.defaults.width=300;
+        $("#example").mb_embedMovies();
+        $("#example").mb_embedAudio();
+      });
+    });
+  </script>
+
+  <style type="text/css">
+    .ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+    .s0 { }
+    .s1 { }
+    .s2 { color: rgb(0,0,128); font-weight: bold; }
+    .s3 { color: rgb(0,0,255); font-weight: bold; }
+    .s4 { color: rgb(0,128,0); font-weight: bold; }
+    .s5 { color: rgb(128,128,128); font-style: italic; }
+  </style>
+
+</head>
+<body>
+
+<div class="wrapper">
+  <h1>mb.mediaEmbedder.demo</h1>
+  This component can embed external video or audio media by pasting the original page URL on your web-page in the Wordpress way (and many other blog site).
+  <br>
+  <br>
+  <pre>
+<span class="s0">
+<a name="l60">  </span><span class="s1">&lt;</span><span class="s2">div </span><span class="s3">id=</span><span class="s4">&quot;example&quot;</span><span class="s1">&gt;</span><span class="s0">
+<a name="l61">  </span><span class="s1">&lt;</span><span class="s2">h1</span><span class="s1">&gt;</span><span class="s0">Vimeo</span><span class="s1">&lt;/</span><span class="s2">h1</span><span class="s1">&gt;</span><span class="s0">
+<a name="l62">  [vimeo=http://www.vimeo.com/109467]</span><span class="s1">&lt;</span><span class="s2">br</span><span class="s1">&gt;&lt;</span><span class="s2">br</span><span class="s1">&gt;</span><span class="s0">
+<a name="l63">  </span><span class="s1">&lt;</span><span class="s2">h1</span><span class="s1">&gt;</span><span class="s0">Ustream</span><span class="s1">&lt;/</span><span class="s2">h1</span><span class="s1">&gt;</span><span class="s0">
+<a name="l64">  [ustream=http://www.ustream.tv/recorded/2691132]</span><span class="s1">&lt;</span><span class="s2">br</span><span class="s1">&gt;&lt;</span><span class="s2">br</span><span class="s1">&gt;</span><span class="s0">
+<a name="l65">  </span><span class="s1">&lt;</span><span class="s2">h1</span><span class="s1">&gt;</span><span class="s0">Youtube</span><span class="s1">&lt;/</span><span class="s2">h1</span><span class="s1">&gt;</span><span class="s0">
+<a name="l66">  [youtube=http://www.youtube.com/watch?v=PLs5HN7FS0w]</span><span class="s1">&lt;</span><span class="s2">br</span><span class="s1">&gt;&lt;</span><span class="s2">br</span><span class="s1">&gt;</span><span class="s0">
+<a name="l67">  </span><span class="s1">&lt;</span><span class="s2">h1</span><span class="s1">&gt;</span><span class="s0">audio files</span><span class="s1">&lt;/</span><span class="s2">h1</span><span class="s1">&gt;</span><span class="s0">
+<a name="l68">  [audio=http://dl.dropbox.com/u/1976976/linea_gialla.mp3]
+  <a name="l69"></span><span class="s1">&lt;/</span><span class="s2">div</span><span class="s1">&gt;</span></pre>
+  <br>
+  <br>
+  <div id="example">
+    <h1>Vimeo</h1>
+    [vimeo=http://www.vimeo.com/109467]<br><br>
+    <h1>Youtube</h1>
+    [youtube=http://www.youtube.com/watch?v=PLs5HN7FS0w]<br><br>
+    <h1>Flickr</h1>
+    [flickr=http://www.flickr.com/photos/danielofredorota/3182095499/]<br><br>
+    <h1>livestream</h1>
+    [livestream=http://www.livestream.com/fox8news]<br><br>  <!-- http://www.livestream.com/academyawards-->
+    <h1>Ustream</h1>
+    [ustream=http://www.ustream.tv/recorded/2691132]<br><br>
+    <h1>audio files</h1>
+    [audio=http://dl.dropbox.com/u/1976976/linea_gialla.mp3&titles=linea gialla]
+  </div>
+
+</div>
+</body>
+</html>
