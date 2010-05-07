@@ -1,0 +1,3 @@
+jquery.mb.mediaEmbedder
+
+1.0 first release
