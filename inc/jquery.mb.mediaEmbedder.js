@@ -14,6 +14,9 @@
  * version: 1.0- 23-gen-2010 - 55
  * © 2001 - 2010 Matteo Bicocchi (pupunzi), Open Lab
  *
+ * 8-9-10
+ * added dailymotion support by: Brice Gaillard (http://github.com/beechannels)
+ *
  */
 
 (function($){
