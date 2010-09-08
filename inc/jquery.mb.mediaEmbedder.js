@@ -71,8 +71,9 @@
         var isUstream= address.indexOf("ustream=http://")!=-1;
         var isLivestream= address.indexOf("livestream=http://")!=-1;
         var isFlickr= address.indexOf("flickr=http://")!=-1;
+        var isDailymotion= address.indexOf("dailymotion=http://")!=-1;
 
-        var isVideo = isYoutube || isVimeo || isUstream || isLivestream || isFlickr;
+        var isVideo = isYoutube || isVimeo || isUstream || isLivestream || isFlickr || isDailymotion;
 
         if(!isVideo) return;
 
@@ -81,6 +82,7 @@
         var showTitle= !$.mb_videoEmbedder.defaults.youtube.showTitle? 0:1;
 
         var vidId=isYoutube?(stringToParse.match( /[\\?&]v=([^&#]*)/))[1]:
+        isDailymotion?(stringToParse.match(/(\w+)_/))[1]:
         isVimeo? (stringToParse.match(/\d+/))[0]:
         isUstream?(stringToParse.match(/\d+/))[0]:
         isFlickr?(stringToParse.match(/\d+/))[0]:
@@ -95,6 +97,7 @@
         var height= Math.ceil((width*ratio)/100);
 
         var path= isYoutube?"http://www.youtube.com/v/":
+        		  isDailymotion?"http://www.dailymotion.com/swf/video/":
                   isVimeo?"http://vimeo.com/moogaloop.swf?clip_id=":
                   isUstream?"http://www.ustream.tv/flash/video/":
                   isLivestream?"http://cdn.livestream.com/grid/LSPlayer.swf?channel=":
@@ -102,6 +105,7 @@
                   null;
 
         var param=isYoutube?"&fs=1&rel=0&hd=1&showsearch=0&showinfo="+showTitle :
+        		  isDailymotion?"?additionalInfos=0":
                   isVimeo?"&amp;server=vimeo.com&amp;show_title="+showTitle+"&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1":
                   isUstream?"?disabledComment=true&amp;autoplay=false":
                   isLivestream?"&amp;color=0xe8e8e8&amp;autoPlay=false&amp;mute=false":
