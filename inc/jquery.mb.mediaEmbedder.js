@@ -1,6 +1,6 @@
 /*******************************************************************************
  jquery.mb.components
- Copyright (c) 2001-2010. Matteo Bicocchi (Pupunzi); Open lab srl, Firenze - Italy
+ Copyright (c) 2001-2011. Matteo Bicocchi (Pupunzi); Open lab srl, Firenze - Italy
  email: mbicocchi@open-lab.com
  site: http://pupunzi.com
 
@@ -12,7 +12,7 @@
 /*
  * jQuery.mb.components: mb.mediaEmbedder
  * version: 1.0- 23-gen-2010 - 55
- * © 2001 - 2010 Matteo Bicocchi (pupunzi), Open Lab
+ * © 2001 - 2011 Matteo Bicocchi (pupunzi), Open Lab
  *
  * 8-9-10
  * added dailymotion support by: Brice Gaillard (http://github.com/beechannels)
