@@ -182,18 +182,24 @@
         var isAudio= pat.indexOf("audio=http://")!=-1;
         var params=pat.replace(/\[audio=/g,"").replace(/\]/g,"");
         var width=$.mb_audioEmbedder.defaults.width;
-        var embedstring= '<object width="'+width+'" height="24" type="application/x-shockwave-flash"' +
-                         'style="outline: medium none; visibility: visible;" ' +
-                         'data="'+$.mb_audioEmbedder.playerPath+'" >' +
-                         '<param name="menu" value="false">'+
-                         '<param name="flashvars" value="soundFile='+params+'">'+
+        var embedstring= '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="' + width + '" height="24" ' +
+                         'style="outline: medium none; visibility: visible;">' +
+                         '<param name="movie" value="' + $.mb_audioEmbedder.playerPath + '"/>' +
+                         '<!--[if !IE]>-->' +
+                         '<object type="application/x-shockwave-flash" data="' + $.mb_audioEmbedder.playerPath + '" width="' + width + '" height="24">' +
+                         '<param name="movie" value="' + $.mb_audioEmbedder.playerPath + '"/>' +
+                         '<!--<![endif]-->' +
+                               '<param name="flashvars" value="soundFile=' + params + '">' +
                          '<param name="wmode" value="transparent">' +
                          '<param name="allowscriptaccess" value="always">' +
-                         '<embed src="'+$.mb_audioEmbedder.playerPath+'" type="application/x-shockwave-flash" ' +
-                         'wmode="transparent" allowscriptaccess="always" ' +
-                         'width="'+width+'" height="24"' +
-                         'flashvars="soundFile='+params+'">' +
-                         '</embed>' +
+                         '<embed src="' + $.mb_audioEmbedder.playerPath + '" type="application/x-shockwave-flash" width="' + width + '" ' +
+                         'height="24" wmode="transparent" allowscriptaccess="always" flashvars="soundFile=' + params + '">' +
+                         '<a href="http://www.adobe.com/go/getflash">' +
+                         '<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player"/>' +
+                         '</a>' +
+                         '<!--[if !IE]>-->' +
+                         '</object>' +
+                         '<!--<![endif]-->' +
                          '</object>';
 
         if(isAudio)
