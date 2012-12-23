@@ -19,6 +19,7 @@
  *
  */
 
+
 (function($){
 
   $.mb_videoEmbedder={
