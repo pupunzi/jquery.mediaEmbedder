@@ -76,7 +76,7 @@
       $(movies).each(function(i){
         var address=movies[i];
 
-        var isYoutube= address.indexOf("youtube=http://")!=-1;
+        var isYoutube= address.match(/(youtube=http:\/\/ | youtube=https:\/\/)/)!=-1;
         var isVimeo= address.indexOf("vimeo=http://")!=-1;
         var isUstream= address.indexOf("ustream=http://")!=-1;
         var isLivestream= address.indexOf("livestream=http://")!=-1;
