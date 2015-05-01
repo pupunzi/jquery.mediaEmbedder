@@ -116,7 +116,7 @@
 
         var param=isYoutube?"&fs=1&rel=0&hd=1&showsearch=0&showinfo="+showTitle :
         		  isDailymotion?"?additionalInfos=0":
-                  isVimeo?"&amp;server=vimeo.com&amp;show_title="+showTitle+"&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1":
+                  isVimeo?"&amp;server=vimeo.com&amp;show_title="+showTitle+"&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;YTPFullscreen=1":
                   isUstream?"?disabledComment=true&amp;autoplay=false":
                   isLivestream?"&amp;color=0xe8e8e8&amp;autoPlay=false&amp;mute=false":
                   "";
